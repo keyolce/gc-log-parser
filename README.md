@@ -7,7 +7,7 @@ bash For_gc_log_parsing_mixed_gcs.sh <GC log file> <mixed/young>
 
 # Result:
 
-157133.272 60.2 28.6 87.0 8.0 Total: 183.8 (A)
+````157133.272 60.2 28.6 87.0 8.0 Total: 183.8 (A)
 
 157142.520 marking end (B)
 
@@ -16,7 +16,7 @@ bash For_gc_log_parsing_mixed_gcs.sh <GC log file> <mixed/young>
 157167.952 marking end
 
 157176.515 34.5 35.6 86.1 9.6 Total: 165.8
-
+````
 
 # Explanation:
 - For Line type (A):
