@@ -33,7 +33,7 @@ bash For_gc_log_parsing_mixed_gcs.sh <GC log file> <mixed/young>
     - 5th column : "Others" => Time taken to handle other activities in a GC
 - For Line type (B) :
   - Gives the information about heap size changes in format :  Before -> After 
-  - First column here can be used to match the heap timings (statements of type (A) )
+  - First column here can be used to match with the heap timings (statements of type (A) )
 - For Line type (C):
   - First number is the epoch => Time spent since start of java application
   - Informs about the time when concurrent marking phase ends => Required to trigger mixed gcs
