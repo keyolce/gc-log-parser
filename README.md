@@ -35,7 +35,7 @@ bash For_gc_log_parsing_mixed_gcs.sh <GC log file> <mixed/young>
   - Informs about the time when concurrent marking phase ends => Required to trigger mixed gcs
   
   
-Sources of information :
+# Sources of information :
 - Some hands on knowledge about reading gc logs: https://www.jfokus.se/jfokus13/preso/jf13_GCLogs.pdf
 - https://www.redhat.com/en/blog/collecting-and-reading-g1-garbage-collector-logs-part-2
 - G1Gc Tips for RSet Details: https://www.infoq.com/articles/tuning-tips-G1-GC/
