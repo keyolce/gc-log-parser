@@ -10,15 +10,16 @@ bash For_gc_log_parsing_mixed_gcs.sh <GC log file> <mixed/young>
 # Result:
 
 ````
-157133.272 60.2 28.6 87.0 8.0 Total: 183.8 (A)
+157212.996 marking end
+157214.751   [Eden: 2424.0M(2416.0M)->0.0B(2408.0M) Survivors: 344.0M->352.0M Heap: 16.4G(18.0G)->14.2G(18.0G)]
+157214.751 38.2 2.9 92.5 6.8 Total: 140.4 (A)
+157227.191   [Eden: 2520.0M(2520.0M)->0.0B(2408.0M) Survivors: 240.0M->352.0M Heap: 16.3G(18.0G)->13.9G(18.0G)]
+157227.191 57.4 21.7 100.7 30.2 Total: 210
+157233.111   [Eden: 2408.0M(2408.0M)->0.0B(2408.0M) Survivors: 352.0M->352.0M Heap: 16.3G(18.0G)->14.1G(18.0G)] (B)
+157233.111 47.3 0.1 94.7 8.0 Total: 150.1
+157235.147 marking end (C)
 
-157142.520 marking end (B)
 
-157152.534 24.9 35.3 80.2 8.5 Total: 148.9
-
-157167.952 marking end
-
-157176.515 34.5 35.6 86.1 9.6 Total: 165.8
 ````
 
 # Explanation:
@@ -30,7 +31,9 @@ bash For_gc_log_parsing_mixed_gcs.sh <GC log file> <mixed/young>
     - 3rd column : Scan Remembered Sets => Time taken to scan the RSets to find out the live objects
     - 4th column : Object copy => Time taken to copy the live objects from old regions (G1 does this to avoid de-fragementation)
     - 5th column : "Others" => Time taken to handle other activities in a GC
-- For Line type (B):
+- For Line type (B) :
+  - Gives the information about heap size changes in format :  Before -> After 
+- For Line type (C):
   - First number is the epoch => Time spent since start of java application
   - Informs about the time when concurrent marking phase ends => Required to trigger mixed gcs
   
