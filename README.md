@@ -7,7 +7,8 @@ bash For_gc_log_parsing_mixed_gcs.sh <GC log file> <mixed/young>
 
 # Result:
 
-````157133.272 60.2 28.6 87.0 8.0 Total: 183.8 (A)
+````
+157133.272 60.2 28.6 87.0 8.0 Total: 183.8 (A)
 
 157142.520 marking end (B)
 
