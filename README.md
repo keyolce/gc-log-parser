@@ -1,5 +1,4 @@
-# gc-log-parser
-G1 GC log parser
+# g1-gc-log-parser
 The script here takes in 2 arguments and gives a breakdown of G1 pause times(with epoch times i.e since the start of the java application)
 
 # Usage:
