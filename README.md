@@ -39,7 +39,7 @@ bash For_gc_log_parsing_mixed_gcs.sh <GC log file> <mixed/young>
   
 For getting information about concurrent marking cycles use:
 ````
-bash gc_log_parser.sh $gc_log_file mixed|grep marking|awk  -F' ' -va=0,b=0 'NR%2==1{ a=$1 } NR%2==0{ print $1-a " " $1}
+bash gc_log_parser.sh $gc_log_file mixed|grep marking|awk  -F' ' -va=0,b=0 '$0 ~ /start/ { a=$1; print $0 } $0 ~ /end/ { print $1-a " " $1}'
 ````
   
   
