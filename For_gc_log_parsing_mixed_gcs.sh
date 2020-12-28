@@ -27,7 +27,9 @@ fi
 
 command_for_concurrent_mark=$(grep "GC concurrent-mark-end" $1| cut -d':' -f4| awk '{print $1 " marking end"}')
 
-aggregate_result="$command_for_gc_phases"$'\n'"$command_for_concurrent_mark"$'\n'"$command_for_heap_size"
+command_for_concurrent_mark_start=$(grep "GC concurrent-mark-start" $1| cut -d':' -f4| awk '{print $1 " marking start"}')
+
+aggregate_result="$command_for_gc_phases"$'\n'"$command_for_concurrent_mark_start"$'\n'"$command_for_concurrent_mark_end"$'\n'"$command_for_heap_size"
 
 echo "$aggregate_result" | sort -k1 -n
 
