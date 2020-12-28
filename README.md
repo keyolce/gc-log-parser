@@ -37,6 +37,11 @@ bash For_gc_log_parsing_mixed_gcs.sh <GC log file> <mixed/young>
   - First number is the epoch => Time spent since start of java application
   - Informs about the time when concurrent marking phase ends => Required to trigger mixed gcs
   
+For getting information about concurrent marking cycles use:
+````
+bash gc_log_parser.sh $gc_log_file mixed|grep marking|awk  -F' ' -va=0,b=0 'NR%2==1{ a=$1 } NR%2==0{ print $1-a " " $1}
+````
+  
   
 # Sources of information :
 - Some hands on knowledge about reading gc logs: https://www.jfokus.se/jfokus13/preso/jf13_GCLogs.pdf
